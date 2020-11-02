@@ -23,9 +23,19 @@ char* toUpper(char* s) {
  * return 1 if equal. Else 0.
  * YOU MAY USE ANY STRING FUNCTION 
  */
-int equalStr(char str1[], char str2[]){
+	int equalStr(char str1[], char str2[]){
 	// your code here
-}
+	int comparison=0;
+	str1=toUpper(str1);
+	str2=toUpper(str2);
+	comparison= strcmp(str1,str2);
+	if(comparison==0)
+		return 1;
+	
+		
+		return 0;
+	}
+
 
 
 /*
@@ -36,6 +46,13 @@ int equalStr(char str1[], char str2[]){
 void exchangeStr(char *str1, char *str2)
 {
 	// write your code below
+	 
+    int capacity= 100;
+    char chArr[capacity];
+    strcpy(chArr, str1);
+    strcpy(str1, str2);
+    strcpy(str2, chArr);
+	
 }
 
 
@@ -48,7 +65,15 @@ void exchangeStr(char *str1, char *str2)
 int countWords(char str[])
 {
 	// write your code below
-
+	int numberOfTheWords=0;
+        int i=0;
+	// write your code below
+       for (i = 0;str[i] != '\0';i++)
+         {
+        if ((str[i] == ' ' && str[i+1] != ' ')||(str[i] == '.' && str[i+1] != '.'))
+            numberOfTheWords++;    
+         }
+    return numberOfTheWords;
 }
 
 
